@@ -7,9 +7,6 @@ import {
   Clock,
   Phone,
   Mail,
-  MapPin,
-  Calendar,
-  Users,
   Heart,
   ArrowRight,
   Info
@@ -81,9 +78,28 @@ const applicationTypes = [
   }
 ];
 
+// Define proper types for our form data
+interface FormData {
+  applicationType: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  address: string;
+  dateOfBirth: string;
+  emergencyContact: string;
+  emergencyPhone: string;
+  servicesNeeded: string[]; // Changed from never[] to string[]
+  availability: string;
+  experience: string;
+  motivation: string;
+  references: string;
+  additionalInfo: string;
+}
+
 export default function ApplyNowPage() {
   const [selectedType, setSelectedType] = useState('');
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     applicationType: '',
     firstName: '',
     lastName: '',

@@ -1,5 +1,7 @@
 import Layout from '@/react-app/components/Layout';
 import { Link } from 'react-router';
+import { DollarSign } from "lucide-react";
+
 import { 
   Target, 
   Eye, 
